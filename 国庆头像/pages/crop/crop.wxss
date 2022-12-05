@@ -1,0 +1,285 @@
+page {
+    background-color: #000;
+}
+
+.cropper-config {
+    padding: 20rpx 0rpx;
+    position: fixed;
+    bottom: 100rpx;
+    width: 750rpx;
+    heigh: 80px;
+}
+
+.cropper-content {
+    width: 100%;
+}
+
+.uni-corpper {
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    box-sizing: border-box;
+}
+
+.uni-corpper,.uni-corpper-content {
+    position: relative;
+    margin: 0 auto;
+}
+
+.uni-corpper-content image {
+    display: block;
+    width: 100%;
+    min-width: 0!important;
+    max-width: none!important;
+    height: 100%;
+    min-height: 0!important;
+    max-height: none!important;
+    image-orientation: 0deg!important;
+    margin: 0 auto;
+}
+
+.uni-cropper-drag-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: move;
+    background: rgba(0,0,0,.6);
+    z-index: 1;
+}
+
+.uni-corpper-crop-box {
+    position: absolute;
+    background: hsla(0,0%,100%,.3);
+    z-index: 2;
+}
+
+.uni-corpper-crop-box .uni-cropper-view-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    outline: 2px solid #c12928;
+    box-shadow: 0 0 5px #888;
+}
+
+.uni-cropper-dashed-h {
+    position: absolute;
+    top: 33.33333333%;
+    left: 0;
+    width: 100%;
+    height: 33.33333333%;
+    border-top: 1rpx dashed hsla(0,0%,100%,.5);
+    border-bottom: 1rpx dashed hsla(0,0%,100%,.5);
+}
+
+.uni-cropper-dashed-v {
+    position: absolute;
+    left: 33.33333333%;
+    top: 0;
+    width: 33.33333333%;
+    height: 100%;
+    border-left: 1rpx dashed hsla(0,0%,100%,.5);
+    border-right: 1rpx dashed hsla(0,0%,100%,.5);
+}
+
+.uni-cropper-line-t {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #69f;
+    top: 0;
+    left: 0;
+    height: 1rpx;
+    opacity: .1;
+    cursor: n-resize;
+}
+
+.uni-cropper-line-t:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0rpx;
+    width: 100%;
+    transform: translate3d(0,-50%,0);
+    bottom: 0;
+    height: 41rpx;
+    background: transparent;
+    z-index: 11;
+}
+
+.uni-cropper-line-r {
+    position: absolute;
+    display: block;
+    background-color: #69f;
+    top: 0;
+    right: 0rpx;
+    width: 1rpx;
+    opacity: .1;
+    height: 100%;
+    cursor: e-resize;
+}
+
+.uni-cropper-line-r:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 41rpx;
+    transform: translate3d(-50%,0,0);
+    bottom: 0;
+    height: 100%;
+    background: transparent;
+    z-index: 11;
+}
+
+.uni-cropper-line-b {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #69f;
+    bottom: 0;
+    left: 0;
+    height: 1rpx;
+    opacity: .1;
+    cursor: s-resize;
+}
+
+.uni-cropper-line-b:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0rpx;
+    width: 100%;
+    transform: translate3d(0,-50%,0);
+    bottom: 0;
+    height: 41rpx;
+    background: transparent;
+    z-index: 11;
+}
+
+.uni-cropper-line-l {
+    position: absolute;
+    display: block;
+    background-color: #69f;
+    top: 0;
+    left: 0;
+    width: 1rpx;
+    opacity: .1;
+    height: 100%;
+    cursor: w-resize;
+}
+
+.uni-cropper-line-l:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 41rpx;
+    transform: translate3d(-50%,0,0);
+    bottom: 0;
+    height: 100%;
+    background: transparent;
+    z-index: 11;
+}
+
+.uni-cropper-point {
+    width: 5rpx;
+    height: 5rpx;
+    background-color: #69f;
+    opacity: .75;
+    position: absolute;
+    z-index: 3;
+}
+
+.point-t {
+    left: 50%;
+}
+
+.point-t,.point-tr {
+    top: -3rpx;
+    margin-left: -3rpx;
+    cursor: n-resize;
+}
+
+.point-tr {
+    left: 100%;
+}
+
+.point-r {
+    top: 50%;
+    margin-left: -3rpx;
+    margin-top: -3rpx;
+}
+
+.point-r,.point-rb {
+    left: 100%;
+    cursor: n-resize;
+}
+
+.point-rb {
+    top: 100%;
+    transform: translate3d(-50%,-50%,0);
+    width: 36rpx;
+    height: 36rpx;
+    background-color: #69f;
+    position: absolute;
+    z-index: 1112;
+    opacity: 1;
+}
+
+.point-b {
+    left: 50%;
+}
+
+.point-b,.point-bl {
+    top: 100%;
+    margin-left: -3rpx;
+    margin-top: -3rpx;
+    cursor: n-resize;
+}
+
+.point-bl {
+    left: 0;
+}
+
+.point-l {
+    top: 50%;
+}
+
+.point-l,.point-lt {
+    left: 0;
+    margin-left: -3rpx;
+    margin-top: -3rpx;
+    cursor: n-resize;
+}
+
+.point-lt {
+    top: 0;
+}
+
+.uni-cropper-viewer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.uni-cropper-viewer image {
+    position: absolute;
+    z-index: 2;
+}
+
+.container {
+    padding-top: 50px;
+    background-color: #000;
+}
+
+.action-btn {
+    background-color: initial;
+    border-style: none;
+    color: #fff;
+}
